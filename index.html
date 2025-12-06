@@ -3,284 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laurence C. - IT Student Portfolio</title>
+    <title>Lo's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #3498db;
-            --secondary: #2c3e50;
-            --accent: #e74c3c;
-            --light: #f8f9fa;
-            --dark: #343a40;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        
-        .navbar {
-            background-color: var(--secondary);
-            transition: all 0.3s ease;
-            padding: 15px 0;
-        }
-        
-        .navbar.scrolled {
-            background-color: rgba(44, 62, 80, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 150px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzNDk4ZGIiLz48cGF0aCBkPSJNMCw1MDBMMTAwMCw1MDBMMTAwMCwxMDAwTDAwMCwxMDAwWiIgZmlsbD0iIzJjM2U1MCIvPjwvc3ZnPg==');
-            background-size: cover;
-            opacity: 0.1;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s ease;
-        }
-        
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 50px;
-            font-weight: 700;
-            text-align: center;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
-        }
-        
-        .card {
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            height: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .skill-item {
-            margin-bottom: 20px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .progress {
-            height: 8px;
-            border-radius: 4px;
-        }
-        
-        .certificate-img {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .certificate-card:hover .certificate-img {
-            transform: scale(1.05);
-        }
-        
-        .contact-info {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .contact-icon {
-            font-size: 24px;
-            color: var(--primary);
-            margin-right: 15px;
-            width: 30px;
-            text-align: center;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-5px);
-        }
-        
-        footer {
-            background-color: var(--secondary);
-            color: white;
-            padding: 30px 0;
-        }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .tech-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .tech-icon:hover {
-            transform: scale(1.2);
-            color: var(--accent);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 120px 0 80px;
-            }
-            
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .display-4 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -288,6 +14,9 @@
             <a class="navbar-brand fw-bold" href="#">
                 <i class="fas fa-laptop-code me-2"></i>Laurence's Portfolio
             </a>
+            <button id="darkModeToggle" class="btn btn-outline-light ms-3">
+                <i class="fas fa-moon"></i>
+            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -312,7 +41,7 @@
 
     <section id="home" class="hero-section text-center">
         <div class="container">
-            <img src="myprofile.jpg" alt="Profile Picture" class="profile-img mb-4">
+            <img src="images/myprofile.jpg" alt="Profile Picture" class="profile-img mb-4" onerror="this.src='https: //via.placeholder.com/200?text=Profile'">
             <h1 class="display-4 fw-bold mb-3">Laurence C. Lo</h1>
             <p class="lead mb-4">Information Technology Student | Aspiring Full-Stack Developer</p>
             <div class="row justify-content-center mb-4">
@@ -324,8 +53,6 @@
                     <i class="fab fa-java tech-icon"></i>
                 </div>
             </div>
-            <a href="#contact" class="btn btn-light btn-lg px-4 me-2">Contact Me</a>
-            <a href="#certificates" class="btn btn-outline-light btn-lg px-4">View Certificates</a>
         </div>
     </section>
 
@@ -419,7 +146,7 @@
             <div class="row justify-content-center"> 
                 <div class="col-md-4 fade-in">
                     <div class="card certificate-card">
-                        <img src="firebase_cert.jpg" class="card-img-top certificate-img" alt="GDG Firebase">
+                        <img src="images/firebase_cert.jpg" class="card-img-top certificate-img" alt="GDG Firebase" onerror="this.src='https://via.placeholder.com/300?text=Certificate'">
                         <div class="card-body">
                             <h5 class="card-title">GDG Firebase</h5>
                             <p class="card-text">I learned how to manage data in real time and secure user information more efficiently. The hands-on demos helped me understand how developers build apps faster using Firebase tools, and it improved my confidence in handling basic backend tasks.</p>
@@ -472,66 +199,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = function() {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-
-        window.addEventListener('load', fadeInOnScroll);
-        window.addEventListener('scroll', fadeInOnScroll);
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
